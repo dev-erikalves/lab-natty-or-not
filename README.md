@@ -9,6 +9,7 @@ Um site interativo desenvolvido em HTML, CSS e JavaScript puro para explorar com
 3. **Fim do desafio e créditos:** Após concluir todas as rodadas, a pontuação final é exibida, as imagens de IA saem de cena e são revelados os créditos oficiais e links para as fotografias reais utilizadas no projeto, com a opção de jogar novamente.
 
 ---
+## Acesse o site clicando [aqui](https://dev-erikalves.github.io/lab-natty-or-not/)
 
 ## Contexto do projeto e geração de imagens
 
