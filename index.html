@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Um quiz visual: você consegue distinguir uma fotografia real de uma imagem criada por IA?">
+  <title>Real ou IA? — Desafio visual</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Um experimento com inteligência artificial</p>
+      <h1>Real ou IA<span aria-hidden="true">?</span></h1>
+      <p class="intro">Duas imagens parecidas. Uma é uma fotografia real e a outra foi criada com inteligência artificial. Observe os detalhes e escolha qual você acha que é real.</p>
+    </header>
+
+    <section class="stats" aria-label="Progresso do jogo" aria-live="polite">
+      <span>Rodada <strong id="round-number">—</strong>/<strong id="round-total">—</strong></span>
+      <span>Acertos <strong id="score">0</strong></span>
+    </section>
+
+    <section id="setup-notice" class="notice" aria-live="polite">
+      <h2>Quase pronto!</h2>
+      <p>Adicione pelo menos uma imagem gerada por IA na pasta <code>images</code>. Os nomes dos arquivos precisam corresponder aos indicados em <code>PROMPTS.md</code>. O quiz ativa automaticamente os pares que encontrar.</p>
+    </section>
+
+    <section id="quiz" hidden>
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+
+      <div class="image-grid" aria-label="Escolha qual imagem é a fotografia real">
+        <article class="image-card">
+          <div class="image-frame"><img id="image-a" alt="Imagem A" /></div>
+          <div class="image-card-content">
+            <h2>Imagem A</h2>
+            <button class="choice-button" id="choose-a" type="button">A é a foto real</button>
+          </div>
+        </article>
+        <article class="image-card">
+          <div class="image-frame"><img id="image-b" alt="Imagem B" /></div>
+          <div class="image-card-content">
+            <h2>Imagem B</h2>
+            <button class="choice-button" id="choose-b" type="button">B é a foto real</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="actions">
+        <button id="next-round" class="secondary-button" type="button" hidden>Próxima rodada →</button>
+      </div>
+    </section>
+
+    <section id="final-results" class="final-results" hidden aria-live="polite">
+      <h2>Fim do desafio!</h2>
+      <p id="final-score"></p>
+      <p>As fotografias reais utilizadas neste projeto e seus respectivos autores no Unsplash encontram-se listadas abaixo:</p>
+    </section>
+
+    <section id="credits" class="credits" hidden>
+      <h2>Créditos das fotografias reais</h2>
+      <p>Clique no crédito para abrir a página original no Unsplash.</p>
+      <ul>
+        <li><a href="https://unsplash.com/pt-br/fotografias/bolo-de-caramelo-com-fatias-de-maca-seca-n1Q6MQ_wqHw" target="_blank" rel="noopener noreferrer">Bolo de caramelo com maçã seca — Raymond Petrik / Unsplash</a></li>
+        <li><a href="https://unsplash.com/pt-br/fotografias/estojo-de-telefone-em-livro-capa-dura-MB6KOk3MueY" target="_blank" rel="noopener noreferrer">Capa de celular sobre livro — Sayan Majhi / Unsplash</a></li>
+        <li><a href="https://unsplash.com/photos/ripe-pineapple-fruit-nAOZCYcLND8" target="_blank" rel="noopener noreferrer">Abacaxi maduro — Fernando Andrade / Unsplash</a></li>
+        <li><a href="https://unsplash.com/pt-br/fotografias/fotografia-de-foco-seletivo-de-cervos-marrons-em-pe-no-campo-de-grama-verde-durante-o-dia-K_Na5gCmh38" target="_blank" rel="noopener noreferrer">Cervo no campo — Laura College / Unsplash</a></li>
+      </ul>
+      <div class="actions credits-actions">
+        <button id="play-again" class="secondary-button" type="button">Jogar novamente</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Projeto de estudo para explorar como fotografias reais e imagens geradas por IA podem se parecer. A ideia é observar, escolher e depois conferir a resposta.</p>
+    </footer>
+  </main>
+</body>
+</html>
