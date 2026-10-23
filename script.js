@@ -73,6 +73,7 @@ function showRound() {
   answered = false;
   const round = gameOrder[currentRound];
   setImages(round);
+  $("quiz").hidden = false;
   $("round-number").textContent = String(currentRound + 1);
   $("round-total").textContent = String(gameOrder.length);
   $("score").textContent = String(score);
